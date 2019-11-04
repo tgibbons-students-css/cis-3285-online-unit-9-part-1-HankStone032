@@ -32,7 +32,7 @@ namespace SingleResponsibilityPrinciple.Tests
         public void NoTestFile()
         {
             //Arrange
-            var tradeStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("");
+            var tradeStream = "http://faculty.css.edu/tgibbons/trades4.txt";
             var tradeProcessor = new TradeProcessor();
 
             //Act
@@ -47,8 +47,7 @@ namespace SingleResponsibilityPrinciple.Tests
         public void EmptyTestFile()
         {
             //Arrange
-            var tradeStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("SingleResponsibilityPrincipleTests.tradesEmpty.txt");
-            var tradeProcessor = new TradeProcessor();
+            var tradeStream = "http://faculty.css.edu/tgibbons/trades4.txt"; var tradeProcessor = new TradeProcessor();
 
             //Act
             tradeProcessor.ProcessTrades(tradeStream);
@@ -60,8 +59,7 @@ namespace SingleResponsibilityPrinciple.Tests
         public void Test4tradesInFile()
         {
             // Arrange
-            var tradeStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("SingleResponsibilityPrincipleTests.trades4.txt");
-            var tradeProcessor = new TradeProcessor();
+            var tradeStream = "http://faculty.css.edu/tgibbons/trades4.txt"; var tradeProcessor = new TradeProcessor();
             int startCount = CountDbRecords();
             // Act
             tradeProcessor.ProcessTrades(tradeStream);
@@ -74,8 +72,7 @@ namespace SingleResponsibilityPrinciple.Tests
         public void TestWronglyFormattedTrades()
         {
             // Arrange
-            var tradeStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("SingleResponsibilityPrincipleTests.tradesBadFormats.txt");
-            var tradeProcessor = new TradeProcessor();
+            var tradeStream = "http://faculty.css.edu/tgibbons/trades4.txt"; var tradeProcessor = new TradeProcessor();
             int startCount = CountDbRecords();
             // Act
             tradeProcessor.ProcessTrades(tradeStream);
@@ -89,8 +86,7 @@ namespace SingleResponsibilityPrinciple.Tests
         public void TestTradeAmountBoounds()
         {
             // Arrange
-            var tradeStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("SingleResponsibilityPrincipleTests.tradesBounds.txt");
-            var tradeProcessor = new TradeProcessor();
+            var tradeStream = "http://faculty.css.edu/tgibbons/trades4.txt"; var tradeProcessor = new TradeProcessor();
             int startCount = CountDbRecords();
             // Act
             tradeProcessor.ProcessTrades(tradeStream);
